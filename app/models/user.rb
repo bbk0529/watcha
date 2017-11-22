@@ -8,7 +8,5 @@ class User < ApplicationRecord
 #role may be regarded as a member variable
 	def admin?
 		role=="admin"? true:false
-
 	end
-
 end

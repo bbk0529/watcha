@@ -1,15 +1,33 @@
-<h1>User management page</h1>
 
+ <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+ 	<h1>User management page</h1>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Email</th>
+                  <th>Role</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
 
-<% @users.each do |user| %>
-<p> 	
-	<%=user.email %> | <%=user.role %> 
-	<%=link_to '[x]', "/admin/users/#{user.id}", method:"delete" %>
-	<%=link_to '[x]', admin_user_path(user), method:"delete", data: {confirm: "Really?"} %>
-	<% if user.role == "admin" %>
-		<%=link_to '[Downgrade]', admin_user_downgrade_path(user), method: :put %>
-	<% else %>
-		<%=link_to '[Upgrade]', admin_user_upgrade_path(user), method: :put, data: {confirm: "Really??"} %>
-	<% end %>
-</p>
-<% end %>
+				<% @users.each do |user| %>
+	                <tr>
+	                	<td><%=user.id %></td>
+	                  	<td><%=user.email %></td>
+	                  	<td><%=user.role %></td>
+	                  	<td><%=link_to '[x]', admin_user_path(user), method:"delete", data: {confirm: "Really?"} %></td>
+	                  	<td><% if user.role == "admin" %>
+							<%=link_to '[Downgrade]', admin_user_downgrade_path(user), method: :put %>
+						<% else %>
+							<%=link_to '[Upgrade]', admin_user_upgrade_path(user), method: :put, data: {confirm: "Really??"} %>
+						<% end %></td>
+	                </tr>
+                <% end %>
+              </tbody>
+
+            </table>
+          </div>
+        </main>
