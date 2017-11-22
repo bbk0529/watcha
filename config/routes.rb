@@ -12,8 +12,8 @@ Rails.application.routes.draw do
 
 	namespace :admin do
 		resources :users do
-			put :upgrade 
-			put :downgrade
+			put :upgrade#, on: :member # without on: :member, it should be :user_id
+			put :downgrade#, on: :member
 		end
 	end
  
