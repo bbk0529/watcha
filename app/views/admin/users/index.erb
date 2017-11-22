@@ -1,0 +1,15 @@
+<h1>User management page</h1>
+
+
+<% @users.each do |user| %>
+<p> 	
+	<%=user.email %> | <%=user.role %> 
+	<%=link_to '[x]', "/admin/users/#{user.id}", method:"delete" %>
+	<%=link_to '[x]', admin_user_path(user), method:"delete", data: {confirm: "Really?"} %>
+	<% if user.role == "admin" %>
+		<%=link_to '[Downgrade]', admin_user_downgrade_path(user), method: :put %>
+	<% else %>
+		<%=link_to '[Upgrade]', admin_user_upgrade_path(user), method: :put, data: {confirm: "Really??"} %>
+	<% end %>
+</p>
+<% end %>

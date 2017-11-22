@@ -11,19 +11,29 @@ require 'csv'
 #CSV.foreach(Rails.root.join('movie_list.csv'))
 
 
-User.create(
+User.create([
+	{
 	email: "admin@asdf.com",
 	password: "asdfasdf",
 	password_confirmation: "asdfasdf",
 	role: "admin"
-)
-
-User.create(
+	},
+	{
 	email: "regular@asdf.com",
 	password: "asdfasdf",
 	password_confirmation: "asdfasdf",
 	role: "regular"
-)
+	}
+])
+
+
+30.times do 
+	User.create(
+		email: Faker::Internet.email,
+		password: "12341234",
+		password_confirmation: "12341234"
+	)
+end 
 
 CSV.open(Rails.root.join('movie_list.csv'),'r').each do |csv|
 	Movie.create(
