@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 
-
+#from here, new gems added 
 gem 'devise'
 gem 'devise-i18n'
 gem 'carrierwave', '~> 1.0'
