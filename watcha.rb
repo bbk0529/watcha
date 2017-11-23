@@ -23,7 +23,7 @@ result['cards'].each do |card|
 	items=card['items'][0]['item'] #breaking point
 
 	title=items['title']
-	poster=items['poster']['small']
+	poster=items['poster']['large']
 	comment = items['interesting_comment']['text'] if items['interesting_comment']
 	# if items['interesting_comment']!=nil
 	# 	comment=items['interesting_comment']['text']
