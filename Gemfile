@@ -12,6 +12,9 @@ gem 'devise-i18n'
 gem 'carrierwave', '~> 1.0'
 gem 'cancancan', '~> 2.0'
 gem 'faker'
+gem 'fog-aws'
+gem 'mini_magick'
+gem 'aws-sdk-rails'
 
 #gem 'rails_12factor', group: :production
 #gem 'pg', group: :production

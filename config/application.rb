@@ -16,5 +16,6 @@ module Watcha
     # -- all .rb files in that directory are automatically loaded.
     config.time_zone = 'Seoul'
     config.i18n.default_locale = :ko
+    config.action_mailer.delivery_method = :aws_sdk
   end
 end
